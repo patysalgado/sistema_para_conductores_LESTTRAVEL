@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Usuario {
+  id                    String     @id @default(uuid())
+  nombre                String
+  email                 String     @unique
+  rol                   String     // "admin" o "usuario"
+  password_hash         String
+  telefono_notificacion String?    // Primer número
+  telefono_notificacion_2 String?  // Segundo número
+  servicios             Servicio[] @relation("CreadorServicio")
+}
+
+model Servicio {
+  id            String   @id @default(uuid())
+  fecha_registro DateTime @default(now())
+  fecha_servicio DateTime
+  hora_servicio  String?  // Nuevo campo
+  fecha_limite  DateTime
+  precio        Float
+  conductor     String
+  origen        String
+  destino       String
+  gastos        Float    @default(0)
+  combustible   Float    @default(0)
+  observaciones String?
+  estado        String   // "Pendiente", "En curso", "Completado", "Cancelado"
+  creado_por_id String
+  notificado    Boolean  @default(false)
+
+  creado_por    Usuario  @relation("CreadorServicio", fields: [creado_por_id], references: [id])
+}
