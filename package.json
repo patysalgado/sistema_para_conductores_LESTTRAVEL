@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start --port ${PORT:-3000} --hostname 0.0.0.0",
+    "start": "next start",
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.js",
     "whatsapp": "node worker.js",
     "postinstall": "prisma generate"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@prisma/client": "^5.12.0",
