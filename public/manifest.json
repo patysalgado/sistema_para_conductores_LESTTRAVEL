@@ -1,0 +1,16 @@
+{
+  "name": "Driver Sync - LESTTRAVEL",
+  "short_name": "DriverSync",
+  "description": "Sistema de Registro para Conductores",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#60a5fa",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2555/2555013.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

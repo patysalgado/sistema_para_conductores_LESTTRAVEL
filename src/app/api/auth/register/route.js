@@ -15,11 +15,15 @@ export async function POST(request) {
 
     const hash = await bcrypt.hash(password, 10)
     
+    // El primer usuario que se registre será el administrador
+    const totalUsuarios = await prisma.usuario.count()
+    const rol = totalUsuarios === 0 ? 'admin' : 'usuario'
+
     const nuevoUsuario = await prisma.usuario.create({
       data: {
         nombre,
         email,
-        rol: 'usuario', // Por defecto todos son conductores
+        rol: rol,
         password_hash: hash
       }
     })

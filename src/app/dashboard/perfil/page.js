@@ -55,20 +55,20 @@ export default function Perfil() {
   const totalNeto = totalRecaudado - totalCombustible - services.reduce((acc, s) => acc + s.gastos, 0)
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+    <div className={styles.profileContainer}>
       <div className={`glass-panel`}>
         <h1 className={styles.pageTitle}>Mi Perfil</h1>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+        <div className={styles.profileGrid}>
           <div>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Nombre</label>
-            <p style={{ fontSize: '1.1rem', fontWeight: '600' }}>{user.nombre}</p>
+            <label className={styles.label}>Nombre</label>
+            <p className={styles.value}>{user.nombre}</p>
           </div>
           <div>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Email</label>
-            <p style={{ fontSize: '1.1rem' }}>{user.email}</p>
+            <label className={styles.label}>Email</label>
+            <p className={styles.value}>{user.email}</p>
           </div>
           <div>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Teléfono Principal (WhatsApp)</label>
+            <label className={styles.label}>Teléfono Principal (WhatsApp)</label>
             <input 
               type="text" 
               className="input-field" 
@@ -78,7 +78,7 @@ export default function Perfil() {
             />
           </div>
           <div>
-            <label style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Teléfono Secundario (WhatsApp)</label>
+            <label className={styles.label}>Teléfono Secundario (WhatsApp)</label>
             <input 
               type="text" 
               className="input-field" 
@@ -88,7 +88,7 @@ export default function Perfil() {
             />
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem' }}>
+        <div className={styles.profileActions}>
           <button 
             onClick={handleSaveProfile} 
             className="btn-primary" 

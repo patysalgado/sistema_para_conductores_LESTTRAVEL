@@ -124,3 +124,107 @@
 .table tr:last-child td {
   border-bottom: none;
 }
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .brand {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .navItem {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tableHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .tableHeader button {
+    width: 100%;
+  }
+
+  .tableContainer {
+    padding: 1rem;
+    overflow-x: auto; /* Permite deslizar la tabla si es muy ancha */
+  }
+
+  .table th, .table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Evita que el texto se rompa y obliga al scroll suave */
+  }
+}
+
+/* --- PROFILE PAGE STYLES --- */
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.label {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.value {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profileActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+  .profileActions {
+    flex-direction: column;
+  }
+}

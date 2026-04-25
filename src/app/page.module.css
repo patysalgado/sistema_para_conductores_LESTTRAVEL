@@ -70,3 +70,12 @@
   height: 300px;
   background: rgba(167, 139, 250, 0.3);
 }
+
+@media (max-width: 480px) {
+  .loginBox {
+    padding: 0 1.5rem;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+}

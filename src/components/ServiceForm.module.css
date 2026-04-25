@@ -65,6 +65,11 @@
 }
 
 @media (max-width: 600px) {
+  .modal {
+    padding: 0 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
   .grid {
     grid-template-columns: 1fr;
   }
